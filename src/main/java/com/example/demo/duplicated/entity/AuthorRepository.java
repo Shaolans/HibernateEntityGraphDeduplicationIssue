@@ -25,6 +25,6 @@ public interface AuthorRepository extends JpaRepository<Author, Integer> {
     List<Author> findAuthorsWithJoinNotFetchedAndEntityGraph();
 
     @EntityGraph(attributePaths = "books")
-    @Query("SELECT a FROM Author a LEFT JOIN a.books INNER JOIN a.agent")
+    @Query("SELECT a FROM Author a INNER JOIN a.agent WHERE a.agent.name like '%John%'")
     List<Author> findAuthorsWithJoinNotFetchedAndEntityGraphAndSelect();
 }

@@ -64,7 +64,7 @@ public class EntityGraphTest {
     @Test
     void findAuthorsWithJoinNotFetchedAndEntityGraphAndSelect() {
         var authors = authorRepository.findAuthorsWithJoinNotFetchedAndEntityGraphAndSelect();
-        assertThat(authors).hasSize(3);
+        assertThat(authors).hasSize(2);
         // Fixed with select !
     }
 }
